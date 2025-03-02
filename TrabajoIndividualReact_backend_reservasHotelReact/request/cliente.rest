@@ -1,0 +1,48 @@
+### Recuperar un cliente por client_id
+GET http://localhost:3000/api/clientes/9
+
+GET http://localhost:3000/api/clientes
+
+###
+
+POST http://localhost:3000/api/clientes
+Content-Type: application/json
+
+{
+    "client_name": "Juan Pérez",
+    "address": "Calle Falsa 123, Madrid",
+    "phone_number": 612345678,
+    "email": "juan.perez@mail.com"
+}
+
+###
+# Borrado de un cliente que no existe (404)
+DELETE http://localhost:3000/api/clientes/99
+
+###
+# Borrado de un cliente que existe (204)
+DELETE http://localhost:3000/api/clientes/11
+
+### Actualizacion de un cliente
+PUT  http://localhost:3000/api/clientes/10
+Content-Type: application/json
+
+{
+    "client_id": 10,
+    "client_name": "Jorge Martín",
+    "address": "Calle de la Paz 13, Barcelona",
+    "phone_number": 612334455,
+    "email": "jorge.martin@mail.com",
+}
+
+### Actualizacion de un cliente BAD REQUEST
+PUT  http://localhost:3000/api/clientes/82
+Content-Type: application/json
+
+{
+    "client_id": 10,
+    "client_name": "Jorge Martín",
+    "address": "Calle de la Paz 13, Barcelona",
+    "phone_number": 612334450,
+    "email": "jorge.martin@mail.com",
+}

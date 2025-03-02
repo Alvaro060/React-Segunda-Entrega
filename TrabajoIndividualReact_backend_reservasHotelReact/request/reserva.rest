@@ -1,0 +1,49 @@
+### Recuperar una reserva por reservation_id
+GET http://localhost:3000/api/reservas/9
+
+GET http://localhost:3000/api/reservas
+
+###
+
+POST http://localhost:3000/api/reservas
+Content-Type: application/json
+
+{
+    "client_id": 1,
+    "check_in_date": 2024-01-15,
+    "check_in_date": 2024-01-20,
+    "room_number": 101,
+    "price": 300.00
+}
+
+###
+# Borrado de una reserva que no existe (404)
+DELETE http://localhost:3000/api/reservas/99
+
+###
+# Borrado de una reserva que existe (204)
+DELETE http://localhost:3000/api/reservas/10
+
+### Actualizacion de una reserva
+PUT  http://localhost:3000/api/reservas/10
+Content-Type: application/json
+
+{
+    "client_id": 2,
+    "check_in_date": 2024-02-10,
+    "check_in_date": 2024-02-15,
+    "room_number": 205,
+    "price": 450.00
+}
+
+### Actualizacion de una reserva BAD REQUEST
+PUT  http://localhost:3000/api/reservas/82
+Content-Type: application/json
+
+{
+    "client_id": 2,
+    "check_in_date": 2024-02-10,
+    "check_in_date": 2024-02-15,
+    "room_number": 205,
+    "price": 455.00
+}
